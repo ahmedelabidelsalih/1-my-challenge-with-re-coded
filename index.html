@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- @TODO: Import Karla font from google fonts and apply it to the web page -->
+  <!-- start work add font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Inter:wght@400;700&family=Karla:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Lobster&family=Lobster+Two:wght@400;700&family=Open+Sans:wght@400;700&family=Red+Hat+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Re:Coded</title>
+</head>
+
+<body>
+    <header>
+        <img src="https://drive.google.com/uc?id=1ml1cDYnVse0DrPlzkG6tOuQOmDfX0_8z" alt="Re:Coded logo" class="logo">
+        <h1 class="title">Re:Coded</h1>
+        <p class="italic">Re:Coded is a non-profit tech organization preparing talented youth in conflict-affected areas
+            to enter the digital economy as software developers and tech entrepreneurs</p>
+    </header>
+    <section class="bootcamp">
+        <h2 class='align-right' style="text-align: center;">Re:Coded Front-End Web Development Bootcamp</h2>
+        <h3>What is our bootcamp</h2>
+        <!-- @TODO: Make every 'Front-End Web Development' sentence in the following article bold -->
+        <!-- for that I used span and br -->
+        <p>Our <span class="word-blod">Front-End Web Development</span>  Bootcamp is designed to kickstart your career as junior web developer or as
+            an entrepreneur with a vision to build your own website, app or software solution.</p>
+        <p>As a non-profit organization we have partnered with Flatiron School in New York, one of the leading
+            coding schools in the world. That allows us to teach their<span class="word-blod">Front-End Web Development</span><br>course introducing
+            you to HTML and CSS. We provide additional
+            training on React,a library for building user interfaces maintained by Facebook and Instagram.And
+            during our program, you will learn JavaScript, all of which will allow you to build amazing websites and
+            accelerate your journey to becoming
+            a working Web Developer! </p>
+        <p>By the end of the program, you will have a portfolio of completed projects to highlight your
+            achievements. </p>
+        <p>The <span class="word-blod"> Front-End Web Development </span> course will take approximately 3.5 months with 10 hours per week of
+            in-person training and 15-25 hours per week of self-study. </p>
+        <p>The last 1.5 month of the bootcamp will be dedicated to a final project to help you build your portfolio
+            of work. </p>
+        <p>Our programs are all in english.</p>
+        <h3>Who can join</h3>
+        <ol>
+            <li>People between the ages of 18 and 35 years. </li>
+            <li>A demonstrated passion for coding and technology. </li>
+            <li>The time and capacity to commit to a full coding bootcamp. Classes are three times per week in
+                person at one of our learning hubs. </li>
+            <li>An intermediate level of English comprehension. </li>
+            <li>The aptitude to succeed in the selection process. </li>
+        </ol>
+        <div class="buttons">
+            <!-- @TODO: Using CSS, try to provide multiple methods to display these divs in a row like the attached pictures.
+                    Keep one of the methods, and comment out the rest -->
+            <div class="infoDiv">
+                <button id="infoBtn">More Info<button>
+            </div>
+            <div id="dataDisplay"></div>
+            <div class="awesomeDiv">
+                <button id="awesomeBtn" onclick="thGe()">I'm Awesome</button>
+                <div id="awesome">
+                    <p><em>I'm awesome, I'm doing the js part</em></p>
+                </div>
+            </div>
+            <div class="searchDiv">
+                <form id='search'>
+                    <input type="text" name="searchBox" id="searchBox" placeholder="search bootcamps">
+                    <input type="button" id="searchBtn" value="search">
+                </form>
+                <div id="searchResults"></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="links">
+            <!-- @TODO: Add the functionality to open the link in a new tab -->
+            <a href="https://www.facebook.com/recodedofficial" target="_blank" ><img
+                    src="https://drive.google.com/uc?id=1-yaPy5DZhbYsLxUP8YWjvlpIZdbzDXxl" alt=""
+                    class="socialIcon" ></a>
+            <a href="https://www.instagram.com/recodedofficial/" target="_blank"><img
+                    src="https://drive.google.com/uc?id=18b8F06ADRb6oGVuWosRYnPPOImNt6iCI" alt=""
+                    class="socialIcon"></a>
+            <a href="https://twitter.com/recodedofficial" target="_blank"><img
+                    src="https://drive.google.com/uc?id=1vVXb5gSBxgwy1idaoPA6rDhc9leviMjx" alt=""
+                    class="socialIcon"></a>
+            <a href="https://www.linkedin.com/company/re-coded/" target="_blank"><img
+                    src="https://drive.google.com/uc?id=1Rzvd49x5LKeb8yVEGgGfuNBKqN9LXpWE" alt=""
+                    class="socialIcon"></a>
+        </div>
+        <div>
+            <span>(&copy;) 2022. Re:Coded is a 501(&copy;)(3) non-profit corporation.</span>
+        </div>
+    </footer>
+    <!--
+        @TODO: Write JavaScript in the script tag below to add functionality to the 3 buttons as described below:
+        - When clicking the "I'm Awesome" button, display the content of '#awesome' div.
+        - When clicking the "I'm Awesome" button again, hide the content of '#awesome' div.
+        - When clicking "More Info" button, get the countries and bootcamps data from the JSON file `/data.json` and display them in the '#dataDisplay' div. 
+        - When clicking the "search" button, search the camps in the JSON file by country and display the search results in the '#searchResults' div  . */
+    -->
+    <script>
+        // write your JavaScript code here
+        var hi = document.getElementById("awesome");
+       function thGe(){
+           
+           if(hi.style.display === "none"){
+            hi.style.display = "block";
+           }
+           else {
+            hi.style.display = "none";
+           }
+       }
+       let dat=document.getElementById(`dataDisplay`);
+       var sh= document.getElementById("infoBtn");
+       sh.addEventListener("click",function(){
+            let xr= new XMLHttpRequest();
+            xr.open(`Get`,`/data.json`);
+            xr.send();
+            xr.onload = function (){
+                let json= JSON.parse(xr.responseText);
+               
+              dat.innerHTML ="<h3>"+"Countries re:coded work in:" + "<br>"+json["countries"]+`</h3>`+"<br>"+`</h4>`+ json["bootcamps"]+"</h4>";
+            }
+       });
+       //search bar
+       let bar=document.getElementById(`searchBox`);
+       var searbtn=document.getElementById("searchBtn");
+       let results=document.getElementById(`searchResults`);
+       searbtn.addEventListener("click",function(){
+           let go= new XMLHttpRequest();
+           go.open(`Get`,`/data.json`);
+           go.send();
+           go.onload = function (){
+               let jsOn= JSON.parse(go.responseText);
+               results.innerHTML=`<h3 style="color:red">hello re:coded I know that is Error<p style="font-size:50px">&#128540;</p> Next time I'm will be better</h3>`;
+             let  coun = jsOn["countries"];
+            
+           }
+       });
+      
+    </script>
+</body>
+
+<!-- hello re:coded I'm now learning js for that I can't complete Write the last challenge in js -->
+
+</html>

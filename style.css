@@ -1,0 +1,201 @@
+
+/* creat variables */
+:root {
+ --main-color:#dda65f;
+}
+/* added global rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Karla', sans-serif;
+
+}
+
+header {
+  background: url("https://drive.google.com/uc?id=1ADdMAd8sSM1GxabjRUpJaqliyYQMxixu");
+  background-size: cover;
+  background-position: center;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  margin: 40px;
+}
+
+.title {
+  margin: 40px;
+  padding: 15px;
+  border: solid #ccc 5px; /* chang border style from dotted to solid */
+  border-radius: 15px;
+}
+
+.italic {
+  margin: 40px;
+  font-size: 22px;
+  font-style: italic;   /*chang font siz ana aling*/
+  text-align: center;
+}
+
+.bootcamp {
+  padding: 20px;
+  
+}
+
+.align-right {
+  text-align: right;
+}
+
+.bootcamp p,
+li {
+  margin: 10px;
+}
+ .bootcamp ol {
+   list-style-type:disc;
+ }
+
+
+ /* here chang " Front-End Web Development" format from normal to bold */
+.bootcamp p .word-blod {
+  font-weight: bold;
+  
+}
+/* 1-first method flex */
+section .buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:space-around;
+  
+  padding: 20px;
+  
+}
+/* 2-The second method grid */
+/* section .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px ;
+  grid-column-gap: 20px;
+  text-align: center;
+  padding-top: 30px;
+  
+ 
+} */
+/* I can change the order of the elements from the HTML, but I did not do this */
+ /* .searchDiv{
+  order: -2;
+}
+.awesomeDiv{
+  order: -1;
+}  */
+
+/* 3-Third method postiton */
+/* 
+section .buttons {
+  
+  position: relative;
+  padding: 40px;
+}
+.infoDiv {
+  position: absolute;
+  right: 10%;
+  text-align: center;
+}
+.awesomeDiv {
+  position: absolute;
+  right: 40%;
+}
+.searchDiv {
+  position: absolute;
+  right: 70%;
+} */
+
+
+#awesome {
+  display:none;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  position:absolute;
+  left: 44%;
+
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#searchBox {
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border-color: var(--main-color);
+}
+
+#searchBox::selection {
+  border-color: #3a7ddd;
+}
+
+#infoBtn,
+#searchBtn,
+#awesomeBtn {
+  background-color: var(--main-color);
+  /* @TODO: add border color to match the background color */
+  border-color: var(--main-color);
+  color: white;
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 16px;
+  padding: 5px 30px;
+  border-radius: 5px;
+  transition: 0.4s;  /*that imporatnt for hover*/
+
+}
+#infoBtn:hover,
+#searchBtn:hover,
+#awesomeBtn:hover { 
+
+cursor: pointer;
+background-color: #3a7ddd;
+border-color: #3a7ddd;
+}
+/* format for json data*/
+.buttons #dataDisplay {
+  position: absolute;
+  text-align: center;
+  left: 74%;
+  bottom: -200px;
+  width: 270px;
+  color: red;
+}
+footer {
+  padding: 30px;
+}
+
+/* @TODO: Make the mouse curser look like a hand when you hover over the buttons (#infoBtn, #searchBtn, #awesomeBtn) 
+and add backgound and border color of #3a7ddd*/
+
+.socialIcon {
+  width: 25px;
+  margin: 0 10px; 
+ transition: 0.4s;
+}
+ 
+.socialIcon:hover {
+  
+   transform: rotate(360deg);
+ 
+}
